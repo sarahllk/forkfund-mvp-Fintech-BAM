@@ -20,6 +20,17 @@ DIMENSION_LABELS: dict[str, str] = {
     "data_completeness":  "Data Completeness",
 }
 
+# Concise labels used in the summary sentence for each dimension.
+_SUMMARY_LABEL: dict[str, str] = {
+    "revenue_stability":  "revenue stability",
+    "cash_flow_strength": "cash-flow position",
+    "debt_burden":        "debt serviceability",
+    "repayment_capacity": "repayment capacity",
+    "cost_structure":     "cost efficiency",
+    "business_maturity":  "trading history",
+    "data_completeness":  "data coverage",
+}
+
 _POSITIVE: dict[str, str] = {
     "revenue_stability":  "Revenue is consistent month-on-month, indicating stable trading conditions.",
     "cash_flow_strength": "Operating cash flow is net positive with a healthy inflow-to-outflow margin.",
@@ -75,6 +86,7 @@ def explain(result: ScoreResult) -> dict:
     negative_drivers: list[str] = []
     risk_flags: list[str] = []
     dimension_notes: dict[str, str] = {}
+    positive_dims: list[str] = []   # dimension keys that cleared the positive threshold
 
     for dim, score in result.sub_scores.items():
         note = _pick_note(dim, score)
@@ -82,13 +94,14 @@ def explain(result: ScoreResult) -> dict:
 
         if score >= _POSITIVE_THRESHOLD:
             positive_drivers.append(_POSITIVE[dim])
+            positive_dims.append(dim)
         elif score < _NEGATIVE_THRESHOLD:
             negative_drivers.append(_NEGATIVE[dim])
 
         if score < _FLAG_THRESHOLD:
             risk_flags.append(_RISK_FLAG[dim])
 
-    summary = _build_summary(result, positive_drivers, negative_drivers, risk_flags)
+    summary = _build_summary(result, positive_drivers, negative_drivers, risk_flags, positive_dims)
 
     return {
         "positive_drivers": positive_drivers,
@@ -112,6 +125,7 @@ def _build_summary(
     positive: list[str],
     negative: list[str],
     flags: list[str],
+    positive_dims: list[str],
 ) -> str:
     opening = (
         f"Overall pre-underwriting score: {result.composite:.0f}/100 "
@@ -127,14 +141,20 @@ def _build_summary(
     else:
         mid = "All assessed dimensions are at or above benchmark. "
 
-    if len(positive) >= 3:
-        close = (
-            "Key strengths include revenue consistency, cash flow position, "
-            "and operational efficiency."
-        )
-    elif len(positive) >= 1:
-        n = len(positive)
-        close = f"{n} positive indicator{'s' if n > 1 else ''} noted."
+    # Build the closing sentence from the actual positive dimension keys,
+    # not from a hardcoded string. This prevents naming a dimension as a
+    # strength when it is simultaneously flagged as a risk or negative driver.
+    n_pos = len(positive_dims)
+    if n_pos >= 3:
+        # Name up to three, in the order they were scored
+        labels = [_SUMMARY_LABEL.get(d, d) for d in positive_dims[:3]]
+        close = f"Key strengths include {labels[0]}, {labels[1]}, and {labels[2]}."
+    elif n_pos == 2:
+        labels = [_SUMMARY_LABEL.get(d, d) for d in positive_dims]
+        close = f"Key strengths: {labels[0]} and {labels[1]}."
+    elif n_pos == 1:
+        label = _SUMMARY_LABEL.get(positive_dims[0], positive_dims[0])
+        close = f"One positive indicator noted: {label}."
     else:
         close = "No dimensions currently exceed the benchmark threshold."
 
