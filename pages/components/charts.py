@@ -62,6 +62,16 @@ def _bar_color(score: float) -> str:
     return _BAR_COLORS["low"]
 
 
+def _axis(**overrides) -> dict:
+    """Merge _AXIS_DEFAULTS with caller overrides using dict-literal syntax.
+
+    dict(**_AXIS_DEFAULTS, key=val) raises TypeError when key already exists in
+    _AXIS_DEFAULTS.  {**_AXIS_DEFAULTS, **overrides} handles duplicates correctly
+    (last value wins) and is safe in all Python 3 versions.
+    """
+    return {**_AXIS_DEFAULTS, **overrides}
+
+
 # ── Sub-score bar chart ───────────────────────────────────────────────────────
 
 def render_subscore_chart(score_result: ScoreResult, height: int = 230) -> None:
@@ -89,9 +99,9 @@ def render_subscore_chart(score_result: ScoreResult, height: int = 230) -> None:
     fig.update_layout(
         **_LAYOUT_DEFAULTS,
         height=height,
-        xaxis=dict(**_AXIS_DEFAULTS, range=[0, 115], tickvals=[0, 25, 50, 70, 100],
+        xaxis=_axis(range=[0, 115], tickvals=[0, 25, 50, 70, 100],
                    ticktext=["0", "25", "50", "70", "100"]),
-        yaxis=dict(**_AXIS_DEFAULTS, tickfont=dict(size=11, color="#374151")),
+        yaxis=_axis(tickfont=dict(size=11, color="#374151")),
         bargap=0.28,
     )
 
@@ -146,10 +156,8 @@ def render_revenue_trend(pos: pd.DataFrame, height: int = 170) -> None:
     fig.update_layout(
         **_LAYOUT_DEFAULTS,
         height=height,
-        xaxis=dict(**_AXIS_DEFAULTS, tickangle=-30,
-                   tickfont=dict(size=10, color="#9CA3AF")),
-        yaxis=dict(**_AXIS_DEFAULTS, tickformat="€,.0f",
-                   tickfont=dict(size=10, color="#9CA3AF")),
+        xaxis=_axis(tickangle=-30, tickfont=dict(size=10, color="#9CA3AF")),
+        yaxis=_axis(tickformat="€,.0f", tickfont=dict(size=10, color="#9CA3AF")),
         bargap=0.15,
     )
 
