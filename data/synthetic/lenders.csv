@@ -1,0 +1,11 @@
+lender_id,name,min_score,max_loan_eur,min_loan_eur,interest_rate_pct,max_term_months,supported_purposes,focus
+L01,Rabobank Zakelijk,51,50000,5000,7.77,36,Term loan|Revolving credit|Equipment finance,Sustainable only
+L02,ING Business Finance,48,250000,10000,5.94,84,Revolving credit|Equipment finance|Term loan|Working capital,Micro-finance
+L03,ABN AMRO Bedrijfskredieten,38,250000,10000,10.21,36,Term loan|Equipment finance|Working capital,Sustainable only
+L04,Triodos Groenfonds,50,50000,25000,10.87,60,Revolving credit|Term loan|Working capital,Micro-finance
+L05,New10,63,50000,25000,4.7,12,Equipment finance|Revolving credit,Sustainable only
+L06,Qredits Microfinanciering,49,50000,25000,5.47,60,Term loan|Revolving credit,Growth-stage
+L07,Funding Circle NL,33,50000,5000,5.56,24,Working capital|Term loan|Equipment finance|Revolving credit,Sustainable only
+L08,October NL,55,250000,10000,10.06,12,Term loan|Working capital|Equipment finance|Revolving credit,Sustainable only
+L09,NIBC Direct Zakelijk,36,100000,25000,11.3,12,Working capital|Equipment finance|Term loan|Revolving credit,Micro-finance
+L10,BNG Bank,53,1000000,10000,8.56,60,Term loan|Working capital|Equipment finance,Growth-stage
