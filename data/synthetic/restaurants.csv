@@ -1,176 +1,121 @@
 restaurant_id,legal_name,cuisine_type,city,legal_form,kvk_number,sbi_code,registration_date,is_active,seats,loan_amount_requested_eur,loan_purpose
-R0001,Vegan Amsterdam 1,Vegan,Amsterdam,Eenmanszaak,42868828,56102,2004-12-29,True,29,200000,Equipment purchase
-R0002,Middle Eastern Nijmegen 2,Middle Eastern,Nijmegen,BV,13999315,56101,2003-11-25,True,123,75000,Inventory
-R0003,Pizza Breda 3,Pizza,Breda,CV,39587039,56210,2001-03-10,True,86,200000,Equipment purchase
-R0004,Middle Eastern Arnhem 4,Middle Eastern,Arnhem,Eenmanszaak,47295260,56102,2007-02-28,True,29,150000,Working capital
-R0005,Middle Eastern Rotterdam 5,Middle Eastern,Rotterdam,BV,58181396,56103,2004-08-01,True,48,10000,Equipment purchase
-R0006,Asian Breda 6,Asian,Breda,CV,20576383,56290,2020-08-10,True,101,250000,Inventory
-R0007,Pizza Nijmegen 7,Pizza,Nijmegen,BV,16150444,56102,2016-03-22,True,136,200000,Equipment purchase
-R0008,Asian Maastricht 8,Asian,Maastricht,CV,47308985,56210,2010-06-11,True,133,200000,Working capital
-R0009,Mexican Groningen 9,Mexican,Groningen,VOF,99949389,56103,2007-04-18,True,99,25000,Equipment purchase
-R0010,Vegan Breda 10,Vegan,Breda,VOF,31931511,56210,2007-09-04,True,153,75000,Inventory
-R0011,Mexican Haarlem 11,Mexican,Haarlem,BV,40742311,56101,2009-11-07,True,97,50000,Expansion
-R0012,Pizza Rotterdam 12,Pizza,Rotterdam,Eenmanszaak,38538251,56210,2012-01-04,True,45,250000,Expansion
-R0013,Burger & Grill Eindhoven 13,Burger & Grill,Eindhoven,VOF,85345555,56290,2006-05-29,True,143,150000,Inventory
-R0014,Seafood Leiden 14,Seafood,Leiden,CV,58586340,56102,2019-03-21,True,81,200000,Renovation
-R0015,Asian Almere 15,Asian,Almere,BV,24716857,56102,2022-11-09,True,104,75000,Expansion
-R0016,Middle Eastern Tilburg 16,Middle Eastern,Tilburg,CV,81016525,56103,2002-11-06,True,89,25000,Equipment purchase
-R0017,Fusion Haarlem 17,Fusion,Haarlem,Eenmanszaak,96028436,56103,2005-02-19,True,30,100000,Expansion
-R0018,Italian Almere 18,Italian,Almere,Eenmanszaak,77187530,56102,2007-02-04,True,161,10000,Equipment purchase
-R0019,Steakhouse Maastricht 19,Steakhouse,Maastricht,VOF,30513739,56103,2013-05-21,True,156,200000,Inventory
-R0020,Italian Leiden 20,Italian,Leiden,Eenmanszaak,75579548,56101,2023-10-16,True,60,150000,Working capital
-R0021,Italian Den Haag 21,Italian,Den Haag,VOF,86149359,56101,2013-10-17,True,42,200000,Expansion
-R0022,Bakery & Café Zaandam 22,Bakery & Café,Zaandam,VOF,27232410,56210,2003-02-07,True,130,50000,Renovation
-R0023,Indian Breda 23,Indian,Breda,CV,38427073,56290,2011-11-21,True,26,250000,Renovation
-R0024,Steakhouse Tilburg 24,Steakhouse,Tilburg,Eenmanszaak,68800797,56290,2013-12-25,True,88,250000,Renovation
-R0025,Mexican Rotterdam 25,Mexican,Rotterdam,BV,88961459,56290,2010-01-29,True,126,200000,Renovation
-R0026,Vegan Rotterdam 26,Vegan,Rotterdam,BV,40728046,56101,2000-04-27,True,140,25000,Working capital
-R0027,Pizza Breda 27,Pizza,Breda,Eenmanszaak,99788677,56210,2003-03-06,True,75,75000,Renovation
-R0028,Turkish Den Haag 28,Turkish,Den Haag,CV,64634663,56102,2021-03-15,True,97,10000,Expansion
-R0029,Middle Eastern Tilburg 29,Middle Eastern,Tilburg,CV,17270733,56101,2015-11-22,True,105,25000,Working capital
-R0030,Pizza Den Haag 30,Pizza,Den Haag,VOF,81979055,56210,2004-11-25,True,137,150000,Renovation
-R0031,Pizza Almere 31,Pizza,Almere,BV,69476001,56290,2012-06-29,True,167,150000,Inventory
-R0032,Fusion Rotterdam 32,Fusion,Rotterdam,VOF,32321899,56210,2000-08-29,True,75,250000,Renovation
-R0033,Italian Leiden 33,Italian,Leiden,VOF,60864911,56101,2017-12-27,True,82,50000,Working capital
-R0034,Middle Eastern Eindhoven 34,Middle Eastern,Eindhoven,CV,30776478,56102,2020-05-29,True,164,50000,Equipment purchase
-R0035,Mexican Arnhem 35,Mexican,Arnhem,BV,16729990,56290,2002-09-25,True,27,75000,Inventory
-R0036,Bakery & Café Amsterdam 36,Bakery & Café,Amsterdam,BV,34941004,56101,2007-01-23,True,146,25000,Renovation
-R0037,Fusion Rotterdam 37,Fusion,Rotterdam,VOF,87701200,56290,2018-02-10,False,91,25000,Equipment purchase
-R0038,Seafood Haarlem 38,Seafood,Haarlem,Eenmanszaak,44999379,56102,2018-10-21,True,128,75000,Working capital
-R0039,Middle Eastern Eindhoven 39,Middle Eastern,Eindhoven,VOF,96637649,56103,2010-09-15,True,69,25000,Equipment purchase
-R0040,Seafood Almere 40,Seafood,Almere,BV,19832887,56290,2000-06-01,True,108,150000,Working capital
-R0041,Mexican Leiden 41,Mexican,Leiden,BV,42787299,56103,2005-12-10,True,170,75000,Expansion
-R0042,Turkish Nijmegen 42,Turkish,Nijmegen,BV,99639081,56290,2013-07-27,True,41,200000,Equipment purchase
-R0043,Asian Eindhoven 43,Asian,Eindhoven,BV,84252420,56102,2006-01-09,True,118,150000,Inventory
-R0044,Mexican Arnhem 44,Mexican,Arnhem,VOF,95125977,56103,2009-06-12,True,31,50000,Working capital
-R0045,Steakhouse Rotterdam 45,Steakhouse,Rotterdam,CV,47135391,56101,2002-04-12,False,141,200000,Renovation
-R0046,Vegan Utrecht 46,Vegan,Utrecht,CV,84045292,56210,2011-10-01,True,86,200000,Equipment purchase
-R0047,Vegan Leiden 47,Vegan,Leiden,VOF,83227889,56101,2003-05-17,True,153,75000,Inventory
-R0048,Burger & Grill Tilburg 48,Burger & Grill,Tilburg,BV,51373735,56103,2006-08-23,True,163,50000,Equipment purchase
-R0049,Steakhouse Den Haag 49,Steakhouse,Den Haag,VOF,99514287,56101,2016-01-19,True,54,150000,Inventory
-R0050,Vegan Nijmegen 50,Vegan,Nijmegen,VOF,41774346,56102,2018-03-25,True,120,25000,Renovation
-R0051,Burger & Grill Amsterdam 51,Burger & Grill,Amsterdam,Eenmanszaak,65259205,56102,2018-06-30,True,152,25000,Equipment purchase
-R0052,Italian Maastricht 52,Italian,Maastricht,CV,39854548,56102,2017-02-27,True,147,10000,Expansion
-R0053,Indian Eindhoven 53,Indian,Eindhoven,VOF,39920292,56101,2015-09-07,True,146,200000,Expansion
-R0054,Indian Eindhoven 54,Indian,Eindhoven,BV,47463522,56103,2014-09-22,True,143,150000,Expansion
-R0055,Asian Amsterdam 55,Asian,Amsterdam,Eenmanszaak,33966966,56290,2014-11-08,True,92,150000,Working capital
-R0056,Seafood Rotterdam 56,Seafood,Rotterdam,CV,56397338,56103,2001-09-18,True,60,200000,Inventory
-R0057,Fusion Tilburg 57,Fusion,Tilburg,VOF,44188276,56101,2005-03-09,True,106,75000,Equipment purchase
-R0058,Turkish Leiden 58,Turkish,Leiden,VOF,58884978,56210,2023-04-28,True,98,100000,Working capital
-R0059,Indian Haarlem 59,Indian,Haarlem,BV,50308572,56290,2014-01-30,True,21,25000,Expansion
-R0060,Vegan Tilburg 60,Vegan,Tilburg,Eenmanszaak,84411983,56102,2014-08-19,True,55,10000,Expansion
-R0061,Seafood Nijmegen 61,Seafood,Nijmegen,Eenmanszaak,64502486,56290,2007-10-22,True,87,150000,Working capital
-R0062,Middle Eastern Den Haag 62,Middle Eastern,Den Haag,Eenmanszaak,72409658,56210,2012-11-13,True,122,75000,Renovation
-R0063,Turkish Almere 63,Turkish,Almere,VOF,98429450,56101,2022-12-06,True,156,100000,Inventory
-R0064,Indian Rotterdam 64,Indian,Rotterdam,VOF,51663795,56102,2015-01-13,True,28,200000,Renovation
-R0065,Pizza Amsterdam 65,Pizza,Amsterdam,CV,92043803,56101,2001-02-04,True,109,150000,Inventory
-R0066,Vegan Arnhem 66,Vegan,Arnhem,CV,76354180,56210,2008-09-20,True,108,100000,Equipment purchase
-R0067,Middle Eastern Zaandam 67,Middle Eastern,Zaandam,VOF,33607110,56290,2004-10-12,True,29,100000,Inventory
-R0068,Indian Leiden 68,Indian,Leiden,BV,71265269,56102,2011-03-06,True,146,50000,Inventory
-R0069,Fusion Zaandam 69,Fusion,Zaandam,CV,92228802,56290,2014-03-26,True,114,10000,Inventory
-R0070,Burger & Grill Leiden 70,Burger & Grill,Leiden,CV,70407340,56103,2020-01-01,True,72,75000,Working capital
-R0071,Steakhouse Almere 71,Steakhouse,Almere,VOF,46855845,56210,2023-05-20,True,177,25000,Working capital
-R0072,Mexican Eindhoven 72,Mexican,Eindhoven,Eenmanszaak,82498004,56101,2010-07-08,True,60,75000,Renovation
-R0073,Burger & Grill Arnhem 73,Burger & Grill,Arnhem,VOF,18620650,56210,2017-03-07,True,178,200000,Inventory
-R0074,Italian Tilburg 74,Italian,Tilburg,VOF,66390708,56210,2020-11-24,True,20,25000,Inventory
-R0075,Fusion Maastricht 75,Fusion,Maastricht,CV,74019136,56101,2000-11-16,True,150,10000,Working capital
-R0076,Fusion Maastricht 76,Fusion,Maastricht,CV,82238741,56290,2017-06-29,True,156,50000,Renovation
-R0077,Sushi Den Haag 77,Sushi,Den Haag,CV,75181765,56101,2021-11-25,True,166,50000,Expansion
-R0078,French Maastricht 78,French,Maastricht,VOF,93517915,56290,2007-05-28,False,86,150000,Expansion
-R0079,Steakhouse Rotterdam 79,Steakhouse,Rotterdam,CV,28213276,56210,2001-03-20,True,35,100000,Working capital
-R0080,Pizza Groningen 80,Pizza,Groningen,CV,53868501,56103,2017-01-02,True,98,200000,Expansion
-R0081,Indian Zaandam 81,Indian,Zaandam,CV,43859311,56101,2012-06-24,True,179,150000,Inventory
-R0082,Pizza Groningen 82,Pizza,Groningen,BV,97477029,56101,2002-05-03,True,82,75000,Renovation
-R0083,Italian Maastricht 83,Italian,Maastricht,VOF,42016960,56102,2008-12-10,True,83,200000,Equipment purchase
-R0084,Vegan Almere 84,Vegan,Almere,Eenmanszaak,59512272,56102,2009-10-11,True,68,25000,Equipment purchase
-R0085,Asian Eindhoven 85,Asian,Eindhoven,BV,51870192,56290,2007-05-07,True,70,10000,Expansion
-R0086,Pizza Arnhem 86,Pizza,Arnhem,BV,89470029,56102,2017-10-16,True,32,10000,Working capital
-R0087,Seafood Zaandam 87,Seafood,Zaandam,BV,56600900,56290,2005-06-06,True,142,150000,Working capital
-R0088,Steakhouse Breda 88,Steakhouse,Breda,Eenmanszaak,11698142,56210,2003-02-03,True,129,75000,Equipment purchase
-R0089,Steakhouse Groningen 89,Steakhouse,Groningen,CV,30534124,56210,2019-06-12,True,133,25000,Inventory
-R0090,Turkish Nijmegen 90,Turkish,Nijmegen,CV,72394301,56210,2012-02-12,True,163,100000,Inventory
-R0091,Indian Groningen 91,Indian,Groningen,VOF,21631697,56103,2012-01-15,True,169,25000,Renovation
-R0092,Seafood Nijmegen 92,Seafood,Nijmegen,CV,55150390,56101,2020-11-04,True,97,150000,Working capital
-R0093,Pizza Almere 93,Pizza,Almere,Eenmanszaak,44675473,56103,2008-02-27,True,96,75000,Inventory
-R0094,Italian Breda 94,Italian,Breda,VOF,21490777,56102,2012-05-23,True,42,75000,Expansion
-R0095,French Arnhem 95,French,Arnhem,CV,70152969,56101,2010-10-12,True,54,50000,Renovation
-R0096,Pizza Arnhem 96,Pizza,Arnhem,Eenmanszaak,99115205,56290,2018-02-20,True,127,150000,Inventory
-R0097,Middle Eastern Groningen 97,Middle Eastern,Groningen,Eenmanszaak,57219209,56210,2023-10-25,True,115,50000,Working capital
-R0098,Vegan Rotterdam 98,Vegan,Rotterdam,VOF,52352128,56101,2010-05-05,True,173,10000,Renovation
-R0099,Vegan Den Haag 99,Vegan,Den Haag,CV,47111151,56290,2008-08-04,True,71,10000,Inventory
-R0100,Indian Rotterdam 100,Indian,Rotterdam,VOF,49761527,56102,2012-09-10,True,70,250000,Working capital
-R0101,Bakery & Café Arnhem 101,Bakery & Café,Arnhem,VOF,46817443,56101,2000-08-19,True,75,250000,Inventory
-R0102,Burger & Grill Arnhem 102,Burger & Grill,Arnhem,CV,23769080,56101,2013-02-07,True,96,150000,Expansion
-R0103,Mexican Almere 103,Mexican,Almere,VOF,16895666,56103,2021-06-22,True,90,50000,Expansion
-R0104,Asian Maastricht 104,Asian,Maastricht,CV,76001106,56101,2005-02-12,True,141,250000,Equipment purchase
-R0105,Turkish Utrecht 105,Turkish,Utrecht,Eenmanszaak,21432787,56102,2006-10-21,True,58,200000,Expansion
-R0106,Bakery & Café Zaandam 106,Bakery & Café,Zaandam,CV,70467027,56210,2010-02-14,True,58,150000,Inventory
-R0107,Seafood Eindhoven 107,Seafood,Eindhoven,BV,91823275,56101,2019-03-27,True,145,75000,Renovation
-R0108,Steakhouse Eindhoven 108,Steakhouse,Eindhoven,BV,31079846,56102,2009-06-19,True,136,50000,Equipment purchase
-R0109,Middle Eastern Amsterdam 109,Middle Eastern,Amsterdam,CV,89699989,56210,2007-01-08,True,28,10000,Renovation
-R0110,Sushi Arnhem 110,Sushi,Arnhem,CV,19553585,56102,2012-12-03,True,88,250000,Inventory
-R0111,Asian Tilburg 111,Asian,Tilburg,VOF,96924061,56102,2008-11-15,True,36,75000,Renovation
-R0112,Burger & Grill Amsterdam 112,Burger & Grill,Amsterdam,Eenmanszaak,89865458,56290,2003-03-15,True,131,25000,Expansion
-R0113,Vegan Almere 113,Vegan,Almere,Eenmanszaak,64023778,56103,2005-07-30,True,134,50000,Expansion
-R0114,Seafood Rotterdam 114,Seafood,Rotterdam,BV,67985905,56103,2019-08-21,True,148,100000,Equipment purchase
-R0115,Steakhouse Den Haag 115,Steakhouse,Den Haag,BV,46173157,56290,2004-02-05,False,105,25000,Renovation
-R0116,Steakhouse Breda 116,Steakhouse,Breda,CV,47333543,56102,2021-02-07,True,91,200000,Expansion
-R0117,French Rotterdam 117,French,Rotterdam,Eenmanszaak,64807553,56103,2022-01-21,True,18,200000,Equipment purchase
-R0118,Middle Eastern Groningen 118,Middle Eastern,Groningen,CV,48683937,56210,2007-03-19,True,96,150000,Inventory
-R0119,Asian Almere 119,Asian,Almere,Eenmanszaak,43876400,56103,2001-08-24,True,124,75000,Expansion
-R0120,Italian Maastricht 120,Italian,Maastricht,CV,65465150,56101,2023-01-31,True,65,150000,Working capital
-R0121,French Haarlem 121,French,Haarlem,BV,37321124,56103,2022-05-12,True,38,100000,Working capital
-R0122,Vegan Leiden 122,Vegan,Leiden,CV,26297533,56101,2019-08-27,True,30,150000,Inventory
-R0123,Burger & Grill Arnhem 123,Burger & Grill,Arnhem,Eenmanszaak,83932360,56101,2010-09-25,True,118,10000,Equipment purchase
-R0124,Fusion Maastricht 124,Fusion,Maastricht,BV,71934487,56101,2010-01-29,True,139,75000,Renovation
-R0125,Vegan Leiden 125,Vegan,Leiden,Eenmanszaak,78299645,56103,2022-05-10,True,144,10000,Expansion
-R0126,French Den Haag 126,French,Den Haag,VOF,61484043,56102,2021-03-07,True,44,75000,Inventory
-R0127,Asian Maastricht 127,Asian,Maastricht,Eenmanszaak,65692629,56103,2006-02-14,True,46,50000,Inventory
-R0128,Italian Maastricht 128,Italian,Maastricht,Eenmanszaak,50071487,56290,2011-12-26,True,123,25000,Expansion
-R0129,Bakery & Café Almere 129,Bakery & Café,Almere,CV,56321751,56103,2006-08-31,True,126,10000,Inventory
-R0130,Fusion Almere 130,Fusion,Almere,Eenmanszaak,35320492,56102,2016-12-02,True,43,100000,Renovation
-R0131,Mexican Amsterdam 131,Mexican,Amsterdam,CV,61167978,56210,2018-06-05,True,145,25000,Renovation
-R0132,Burger & Grill Amsterdam 132,Burger & Grill,Amsterdam,Eenmanszaak,23470708,56210,2022-03-21,True,64,250000,Expansion
-R0133,Burger & Grill Arnhem 133,Burger & Grill,Arnhem,CV,97883261,56102,2000-09-08,True,178,100000,Working capital
-R0134,Vegan Nijmegen 134,Vegan,Nijmegen,CV,97219599,56101,2015-03-09,True,88,50000,Inventory
-R0135,Steakhouse Groningen 135,Steakhouse,Groningen,CV,82613940,56101,2017-01-17,True,116,100000,Renovation
-R0136,Vegan Den Haag 136,Vegan,Den Haag,BV,68246664,56101,2012-11-21,True,63,10000,Equipment purchase
-R0137,Vegan Utrecht 137,Vegan,Utrecht,Eenmanszaak,13885234,56101,2019-11-26,True,39,250000,Equipment purchase
-R0138,Mexican Groningen 138,Mexican,Groningen,CV,29538047,56102,2013-02-27,True,83,75000,Inventory
-R0139,Burger & Grill Utrecht 139,Burger & Grill,Utrecht,BV,91804602,56210,2008-01-29,True,92,200000,Renovation
-R0140,Seafood Leiden 140,Seafood,Leiden,VOF,41163805,56210,2022-04-28,True,25,10000,Expansion
-R0141,Italian Haarlem 141,Italian,Haarlem,CV,48605268,56290,2011-06-15,True,60,75000,Expansion
-R0142,Sushi Nijmegen 142,Sushi,Nijmegen,CV,43567615,56210,2015-07-02,True,125,75000,Renovation
-R0143,French Maastricht 143,French,Maastricht,BV,41837210,56210,2017-04-03,True,87,250000,Inventory
-R0144,Sushi Arnhem 144,Sushi,Arnhem,BV,98346110,56210,2013-04-09,True,41,100000,Inventory
-R0145,Seafood Leiden 145,Seafood,Leiden,CV,48412328,56102,2002-03-14,True,104,75000,Working capital
-R0146,Pizza Haarlem 146,Pizza,Haarlem,Eenmanszaak,98473848,56102,2009-10-28,True,148,50000,Equipment purchase
-R0147,French Zaandam 147,French,Zaandam,BV,87789079,56103,2013-11-09,True,172,50000,Equipment purchase
-R0148,Vegan Groningen 148,Vegan,Groningen,CV,33574011,56102,2013-03-28,True,104,100000,Inventory
-R0149,Bakery & Café Breda 149,Bakery & Café,Breda,Eenmanszaak,32084778,56103,2016-05-30,True,155,75000,Expansion
-R0150,Indian Arnhem 150,Indian,Arnhem,Eenmanszaak,25457816,56210,2013-03-28,True,61,10000,Renovation
-R0151,Steakhouse Maastricht 151,Steakhouse,Maastricht,CV,84801233,56103,2010-02-13,True,75,200000,Expansion
-R0152,Bakery & Café Eindhoven 152,Bakery & Café,Eindhoven,BV,71040347,56103,2000-08-16,True,16,250000,Working capital
-R0153,Steakhouse Maastricht 153,Steakhouse,Maastricht,Eenmanszaak,24541967,56102,2017-02-02,True,104,25000,Inventory
-R0154,Seafood Leiden 154,Seafood,Leiden,VOF,96926431,56101,2014-09-18,True,64,100000,Expansion
-R0155,Middle Eastern Haarlem 155,Middle Eastern,Haarlem,BV,28760553,56101,2013-07-22,True,67,10000,Working capital
-R0156,Asian Rotterdam 156,Asian,Rotterdam,VOF,82148284,56102,2022-02-05,True,124,150000,Working capital
-R0157,Vegan Nijmegen 157,Vegan,Nijmegen,VOF,65684858,56101,2018-10-19,True,34,50000,Inventory
-R0158,Italian Eindhoven 158,Italian,Eindhoven,Eenmanszaak,39161443,56210,2018-04-22,True,55,150000,Renovation
-R0159,Steakhouse Rotterdam 159,Steakhouse,Rotterdam,Eenmanszaak,83076970,56103,2016-04-08,True,135,150000,Working capital
-R0160,Indian Rotterdam 160,Indian,Rotterdam,CV,22304198,56102,2008-07-06,True,169,200000,Inventory
-R0161,Turkish Amsterdam 161,Turkish,Amsterdam,Eenmanszaak,42691263,56102,2000-12-15,True,67,10000,Renovation
-R0162,Turkish Maastricht 162,Turkish,Maastricht,VOF,88703005,56102,2003-01-29,True,116,250000,Renovation
-R0163,Burger & Grill Zaandam 163,Burger & Grill,Zaandam,BV,47215199,56102,2014-09-27,True,175,25000,Inventory
-R0164,Burger & Grill Zaandam 164,Burger & Grill,Zaandam,BV,98725654,56101,2011-03-30,True,54,10000,Working capital
-R0165,Mexican Nijmegen 165,Mexican,Nijmegen,BV,33386929,56103,2010-09-03,True,38,100000,Expansion
-R0166,Vegan Rotterdam 166,Vegan,Rotterdam,BV,73920651,56210,2023-08-07,True,105,50000,Inventory
-R0167,Bakery & Café Almere 167,Bakery & Café,Almere,VOF,92558242,56101,2004-11-21,True,66,200000,Inventory
-R0168,Steakhouse Almere 168,Steakhouse,Almere,BV,18163847,56210,2013-07-12,True,90,200000,Expansion
-R0169,Vegan Almere 169,Vegan,Almere,CV,19863756,56101,2004-11-03,True,173,50000,Renovation
-R0170,Sushi Utrecht 170,Sushi,Utrecht,Eenmanszaak,61124122,56290,2002-12-12,True,48,250000,Expansion
-R0171,Middle Eastern Nijmegen 171,Middle Eastern,Nijmegen,BV,25356396,56290,2022-09-04,True,119,50000,Renovation
-R0172,Fusion Almere 172,Fusion,Almere,VOF,65541117,56103,2019-04-17,True,117,100000,Expansion
-R0173,Asian Arnhem 173,Asian,Arnhem,Eenmanszaak,67279295,56103,2018-08-29,True,164,50000,Working capital
-R0174,Fusion Haarlem 174,Fusion,Haarlem,CV,19010480,56101,2006-11-05,True,178,250000,Equipment purchase
-R0175,Vegan Rotterdam 175,Vegan,Rotterdam,Eenmanszaak,27463800,56290,2019-05-16,True,44,25000,Inventory
+R0001,Vegan Amsterdam 1,Vegan,Amsterdam,Eenmanszaak,42868828,56102,2002-12-30,True,25,200000,Equipment purchase
+R0002,Seafood Rotterdam 2,Seafood,Rotterdam,CV,14265799,56101,2022-06-19,True,108,75000,Renovation
+R0003,Italian Nijmegen 3,Italian,Nijmegen,VOF,97226012,56290,2020-09-01,True,76,200000,Expansion
+R0004,Indian Zaandam 4,Indian,Zaandam,BV,31429110,56210,2010-06-24,True,24,150000,Renovation
+R0005,Mexican Zaandam 5,Mexican,Zaandam,BV,22448136,56210,2007-08-29,True,41,10000,Working capital
+R0006,Italian Zaandam 6,Italian,Zaandam,CV,81971316,56101,2009-11-12,True,89,250000,Expansion
+R0007,Sushi Breda 7,Sushi,Breda,Eenmanszaak,87490893,56102,2001-07-15,True,120,200000,Equipment purchase
+R0008,Sushi Zaandam 8,Sushi,Zaandam,BV,41244663,56101,2008-03-22,True,118,200000,Expansion
+R0009,Mexican Utrecht 9,Mexican,Utrecht,Eenmanszaak,38119557,56103,2014-05-14,True,87,25000,Equipment purchase
+R0010,Vegan Breda 10,Vegan,Breda,VOF,31931511,56210,2005-09-04,True,136,75000,Inventory
+R0011,Mexican Haarlem 11,Mexican,Haarlem,BV,40742311,56101,2007-11-08,True,86,50000,Expansion
+R0012,Pizza Rotterdam 12,Pizza,Rotterdam,Eenmanszaak,38538251,56210,2010-01-04,True,39,250000,Expansion
+R0013,Burger & Grill Eindhoven 13,Burger & Grill,Eindhoven,VOF,85345555,56290,2004-05-29,True,127,150000,Inventory
+R0014,Seafood Leiden 14,Seafood,Leiden,CV,58586340,56102,2017-03-21,True,71,200000,Renovation
+R0015,Asian Almere 15,Asian,Almere,BV,24716857,56102,2020-11-09,True,92,75000,Expansion
+R0016,Middle Eastern Tilburg 16,Middle Eastern,Tilburg,CV,81016525,56103,2000-11-06,True,78,25000,Equipment purchase
+R0017,Fusion Haarlem 17,Fusion,Haarlem,Eenmanszaak,96028436,56103,2003-02-20,True,25,100000,Expansion
+R0018,Italian Almere 18,Italian,Almere,Eenmanszaak,77187530,56102,2005-02-04,True,143,10000,Equipment purchase
+R0019,Steakhouse Maastricht 19,Steakhouse,Maastricht,VOF,30513739,56103,2011-05-22,True,139,200000,Inventory
+R0020,Italian Leiden 20,Italian,Leiden,Eenmanszaak,75579548,56101,2021-10-16,True,52,150000,Working capital
+R0021,Italian Den Haag 21,Italian,Den Haag,VOF,86149359,56101,2011-10-18,True,36,200000,Expansion
+R0022,Bakery & Café Zaandam 22,Bakery & Café,Zaandam,VOF,27232410,56210,2001-02-07,True,115,50000,Renovation
+R0023,Indian Breda 23,Indian,Breda,CV,38427073,56290,2009-11-21,True,22,250000,Renovation
+R0024,Steakhouse Tilburg 24,Steakhouse,Tilburg,Eenmanszaak,68800797,56290,2011-12-26,True,77,250000,Renovation
+R0025,Mexican Rotterdam 25,Mexican,Rotterdam,BV,88961459,56290,2008-01-30,True,112,200000,Renovation
+R0026,Vegan Rotterdam 26,Vegan,Rotterdam,BV,40728046,56101,1998-04-28,True,124,25000,Working capital
+R0027,Pizza Breda 27,Pizza,Breda,Eenmanszaak,99788677,56210,2001-03-06,True,65,75000,Renovation
+R0028,French Nijmegen 28,French,Nijmegen,VOF,73481353,56210,2023-08-13,True,85,10000,Equipment purchase
+R0029,Middle Eastern Groningen 29,Middle Eastern,Groningen,CV,72682989,56101,2017-05-03,True,92,25000,Equipment purchase
+R0030,Vegan Tilburg 30,Vegan,Tilburg,Eenmanszaak,24665841,56102,2000-09-20,True,122,150000,Inventory
+R0031,Middle Eastern Utrecht 31,Middle Eastern,Utrecht,VOF,47385696,56210,2018-02-15,True,148,150000,Equipment purchase
+R0032,Indian Zaandam 32,Indian,Zaandam,BV,16789850,56290,2017-11-17,True,66,250000,Equipment purchase
+R0033,Middle Eastern Utrecht 33,Middle Eastern,Utrecht,CV,74606833,56102,2008-08-08,True,72,50000,Equipment purchase
+R0034,Italian Tilburg 34,Italian,Tilburg,CV,45594951,56210,2005-05-21,True,146,50000,Inventory
+R0035,Pizza Utrecht 35,Pizza,Utrecht,Eenmanszaak,39219319,56101,2019-10-31,True,23,75000,Inventory
+R0036,Mexican Arnhem 36,Mexican,Arnhem,BV,16729990,56290,2000-09-25,True,129,25000,Inventory
+R0037,Bakery & Café Amsterdam 37,Bakery & Café,Amsterdam,BV,34941004,56101,2005-01-23,True,80,25000,Renovation
+R0038,Fusion Rotterdam 38,Fusion,Rotterdam,VOF,87701200,56290,2016-02-11,False,113,75000,Equipment purchase
+R0039,Seafood Haarlem 39,Seafood,Haarlem,Eenmanszaak,44999379,56102,2016-10-21,True,60,25000,Working capital
+R0040,Middle Eastern Eindhoven 40,Middle Eastern,Eindhoven,VOF,96637649,56103,2008-09-15,True,95,150000,Equipment purchase
+R0041,Seafood Almere 41,Seafood,Almere,BV,19832887,56290,1998-06-02,True,151,75000,Working capital
+R0042,Mexican Leiden 42,Mexican,Leiden,BV,42787299,56103,2003-12-11,True,35,200000,Expansion
+R0043,Sushi Arnhem 43,Sushi,Arnhem,BV,99639081,56290,2022-05-15,True,105,150000,Equipment purchase
+R0044,Asian Eindhoven 44,Asian,Eindhoven,BV,84252420,56102,2004-01-10,True,26,50000,Inventory
+R0045,Mexican Arnhem 45,Mexican,Arnhem,VOF,95125977,56103,2007-06-13,True,125,200000,Working capital
+R0046,Steakhouse Rotterdam 46,Steakhouse,Rotterdam,CV,47135391,56101,2000-04-12,False,76,200000,Renovation
+R0047,Vegan Utrecht 47,Vegan,Utrecht,CV,84045292,56210,2009-10-01,True,136,75000,Equipment purchase
+R0048,Vegan Leiden 48,Vegan,Leiden,VOF,83227889,56101,2001-05-17,True,144,50000,Inventory
+R0049,Middle Eastern Utrecht 49,Middle Eastern,Utrecht,VOF,15614174,56103,2022-10-14,True,47,150000,Equipment purchase
+R0050,Steakhouse Den Haag 50,Steakhouse,Den Haag,VOF,99514287,56101,2014-01-19,True,106,25000,Inventory
+R0051,Vegan Nijmegen 51,Vegan,Nijmegen,VOF,41774346,56102,2016-03-25,True,135,25000,Renovation
+R0052,Burger & Grill Amsterdam 52,Burger & Grill,Amsterdam,Eenmanszaak,65259205,56102,2016-06-30,True,131,10000,Equipment purchase
+R0053,Italian Maastricht 53,Italian,Maastricht,CV,39854548,56102,2015-02-28,True,129,200000,Expansion
+R0054,Indian Eindhoven 54,Indian,Eindhoven,VOF,39920292,56101,2013-09-07,True,127,150000,Expansion
+R0055,Indian Eindhoven 55,Indian,Eindhoven,BV,47463522,56103,2012-09-22,True,81,150000,Expansion
+R0056,Italian Groningen 56,Italian,Groningen,BV,45059710,56102,2022-01-20,True,53,200000,Working capital
+R0057,Seafood Rotterdam 57,Seafood,Rotterdam,CV,56397338,56103,1999-09-19,True,94,75000,Inventory
+R0058,Fusion Tilburg 58,Fusion,Tilburg,VOF,44188276,56101,2003-03-10,True,86,100000,Equipment purchase
+R0059,Turkish Leiden 59,Turkish,Leiden,VOF,58884978,56210,2021-04-28,False,17,25000,Working capital
+R0060,Indian Haarlem 60,Indian,Haarlem,BV,50308572,56290,2012-01-31,True,48,10000,Expansion
+R0061,Vegan Tilburg 61,Vegan,Tilburg,Eenmanszaak,84411983,56102,2012-08-19,True,77,150000,Expansion
+R0062,Seafood Nijmegen 62,Seafood,Nijmegen,Eenmanszaak,64502486,56290,2005-10-22,True,108,75000,Working capital
+R0063,Middle Eastern Den Haag 63,Middle Eastern,Den Haag,Eenmanszaak,72409658,56210,2010-11-14,True,138,100000,Renovation
+R0064,Turkish Almere 64,Turkish,Almere,VOF,98429450,56101,2020-12-06,True,23,200000,Inventory
+R0065,Indian Rotterdam 65,Indian,Rotterdam,VOF,51663795,56102,2013-01-13,True,97,150000,Renovation
+R0066,Pizza Amsterdam 66,Pizza,Amsterdam,CV,92043803,56101,1999-02-05,True,95,100000,Inventory
+R0067,Vegan Arnhem 67,Vegan,Arnhem,CV,76354180,56210,2006-09-21,True,25,100000,Equipment purchase
+R0068,Middle Eastern Zaandam 68,Middle Eastern,Zaandam,VOF,33607110,56290,2002-10-13,True,129,50000,Inventory
+R0069,Indian Leiden 69,Indian,Leiden,BV,71265269,56102,2009-03-06,True,101,10000,Inventory
+R0070,Mexican Nijmegen 70,Mexican,Nijmegen,CV,92228802,56290,2023-01-27,True,63,75000,Inventory
+R0071,Burger & Grill Leiden 71,Burger & Grill,Leiden,CV,70407340,56103,2018-01-01,True,157,25000,Working capital
+R0072,Steakhouse Almere 72,Steakhouse,Almere,VOF,46855845,56210,2021-05-20,True,52,75000,Working capital
+R0073,Mexican Eindhoven 73,Mexican,Eindhoven,Eenmanszaak,82498004,56101,2008-07-08,True,158,200000,Renovation
+R0074,Burger & Grill Arnhem 74,Burger & Grill,Arnhem,VOF,18620650,56210,2015-03-08,True,17,25000,Inventory
+R0075,Italian Tilburg 75,Italian,Tilburg,VOF,66390708,56210,2018-11-25,True,133,10000,Inventory
+R0076,Fusion Maastricht 76,Fusion,Maastricht,CV,74019136,56101,1998-11-17,True,138,50000,Working capital
+R0077,Fusion Maastricht 77,Fusion,Maastricht,CV,82238741,56290,2015-06-30,True,147,50000,Renovation
+R0078,Sushi Den Haag 78,Sushi,Den Haag,CV,75181765,56101,2019-11-26,True,76,150000,Expansion
+R0079,French Maastricht 79,French,Maastricht,VOF,93517915,56290,2005-05-28,False,30,100000,Expansion
+R0080,Italian Haarlem 80,Italian,Haarlem,BV,96268397,56210,2023-04-26,True,86,200000,Expansion
+R0081,Sushi Amsterdam 81,Sushi,Amsterdam,CV,53936531,56102,2006-02-25,True,159,150000,Working capital
+R0082,Turkish Eindhoven 82,Turkish,Eindhoven,CV,43859311,56101,2015-01-03,True,72,75000,Inventory
+R0083,Pizza Groningen 83,Pizza,Groningen,BV,97477029,56101,2000-05-03,True,73,200000,Renovation
+R0084,Italian Maastricht 84,Italian,Maastricht,VOF,42016960,56102,2006-12-11,True,59,25000,Equipment purchase
+R0085,French Den Haag 85,French,Den Haag,Eenmanszaak,59512272,56102,2023-04-20,True,61,10000,Equipment purchase
+R0086,Asian Eindhoven 86,Asian,Eindhoven,BV,51870192,56290,2005-05-07,True,27,10000,Expansion
+R0087,Pizza Arnhem 87,Pizza,Arnhem,BV,89470029,56102,2015-10-17,True,126,150000,Working capital
+R0088,Seafood Zaandam 88,Seafood,Zaandam,BV,56600900,56290,2003-06-07,True,115,75000,Working capital
+R0089,Steakhouse Breda 89,Steakhouse,Breda,Eenmanszaak,11698142,56210,2001-02-03,True,118,25000,Equipment purchase
+R0090,Steakhouse Groningen 90,Steakhouse,Groningen,CV,30534124,56210,2017-06-12,True,145,100000,Inventory
+R0091,Turkish Nijmegen 91,Turkish,Nijmegen,CV,72394301,56210,2010-02-12,True,150,25000,Inventory
+R0092,Indian Groningen 92,Indian,Groningen,VOF,21631697,56103,2010-01-15,True,85,150000,Renovation
+R0093,Seafood Nijmegen 93,Seafood,Nijmegen,CV,55150390,56101,2018-11-05,True,85,75000,Working capital
+R0094,Pizza Almere 94,Pizza,Almere,Eenmanszaak,44675473,56103,2006-02-27,True,36,75000,Inventory
+R0095,Italian Breda 95,Italian,Breda,VOF,21490777,56102,2010-05-24,True,47,50000,Expansion
+R0096,Pizza Zaandam 96,Pizza,Zaandam,CV,96691619,56210,2022-11-27,True,113,150000,Equipment purchase
+R0097,Pizza Eindhoven 97,Pizza,Eindhoven,CV,42655866,56103,2002-03-05,True,101,50000,Working capital
+R0098,Bakery & Café Breda 98,Bakery & Café,Breda,Eenmanszaak,67110154,56290,2019-03-25,True,154,10000,Expansion
+R0099,Sushi Eindhoven 99,Sushi,Eindhoven,VOF,26194158,56102,2010-02-25,True,62,10000,Inventory
+R0100,Pizza Den Haag 100,Pizza,Den Haag,CV,47111151,56290,2006-04-22,True,62,250000,Inventory
+R0101,Indian Rotterdam 101,Indian,Rotterdam,VOF,49761527,56102,2010-09-11,True,66,250000,Working capital
+R0102,Bakery & Café Arnhem 102,Bakery & Café,Arnhem,VOF,46817443,56101,1998-08-20,True,85,150000,Inventory
+R0103,Burger & Grill Arnhem 103,Burger & Grill,Arnhem,CV,23769080,56101,2011-02-08,True,79,50000,Expansion
+R0104,Mexican Almere 104,Mexican,Almere,VOF,16895666,56103,2019-06-23,True,125,250000,Expansion
+R0105,Asian Maastricht 105,Asian,Maastricht,CV,76001106,56101,2003-02-13,True,51,200000,Equipment purchase
+R0106,Turkish Utrecht 106,Turkish,Utrecht,Eenmanszaak,21432787,56102,2004-10-21,True,50,150000,Expansion
+R0107,Bakery & Café Zaandam 107,Bakery & Café,Zaandam,CV,70467027,56210,2008-02-15,True,128,75000,Inventory
+R0108,Seafood Eindhoven 108,Seafood,Eindhoven,BV,91823275,56101,2017-03-27,True,121,50000,Renovation
+R0109,Steakhouse Eindhoven 109,Steakhouse,Eindhoven,BV,31079846,56102,2007-06-20,True,23,10000,Equipment purchase
+R0110,Middle Eastern Amsterdam 110,Middle Eastern,Amsterdam,CV,89699989,56210,2005-01-08,True,78,250000,Renovation
+R0111,Sushi Arnhem 111,Sushi,Arnhem,CV,19553585,56102,2010-12-04,True,30,75000,Inventory
+R0112,Asian Tilburg 112,Asian,Tilburg,VOF,96924061,56102,2006-11-16,True,116,25000,Renovation
+R0113,Burger & Grill Amsterdam 113,Burger & Grill,Amsterdam,Eenmanszaak,89865458,56290,2001-03-15,True,118,50000,Expansion
+R0114,Vegan Almere 114,Vegan,Almere,Eenmanszaak,64023778,56103,2003-07-31,True,131,100000,Expansion
+R0115,Seafood Rotterdam 115,Seafood,Rotterdam,BV,67985905,56103,2017-08-21,True,92,25000,Equipment purchase
+R0116,Steakhouse Den Haag 116,Steakhouse,Den Haag,BV,46173157,56290,2002-02-05,False,80,200000,Renovation
+R0117,Steakhouse Breda 117,Steakhouse,Breda,CV,47333543,56102,2019-02-08,True,14,200000,Expansion
+R0118,French Rotterdam 118,French,Rotterdam,Eenmanszaak,64807553,56103,2020-01-22,True,84,150000,Equipment purchase
+R0119,Middle Eastern Groningen 119,Middle Eastern,Groningen,CV,48683937,56210,2005-03-19,True,110,75000,Inventory
+R0120,Asian Almere 120,Asian,Almere,Eenmanszaak,43876400,56103,1999-08-25,True,57,150000,Expansion

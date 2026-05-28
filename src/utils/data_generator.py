@@ -8,8 +8,16 @@ Outputs:
   data/synthetic/pos_records.csv
   data/synthetic/accounting.csv
   data/synthetic/lenders.csv
+
+Scale targets (approximate):
+  restaurants  ~120 rows
+  transactions ~88k rows   (120 restaurants × 365 days × 2 tx/day)
+  pos_records  ~44k rows   (120 restaurants × 365 days × 1 row/day)
+  accounting   ~360 rows   (120 restaurants × 3 annual years)
+  lenders      10 rows
 """
 
+import math
 import random
 from datetime import date, timedelta
 from pathlib import Path
@@ -18,7 +26,8 @@ import numpy as np
 import pandas as pd
 
 SEED = 42
-N_RESTAURANTS = 175
+N_RESTAURANTS = 120
+HISTORY_DAYS = 365          # 12 months for both transactions and POS
 OUTPUT_DIR = Path("data/synthetic")
 
 rng = np.random.default_rng(SEED)
@@ -62,20 +71,11 @@ LOAN_PRODUCTS = [
     "Working capital",
 ]
 
-TX_CATEGORIES = [
-    "Food & Beverage Supply",
-    "Staff Costs",
-    "Rent",
-    "Utilities",
-    "Marketing",
-    "Insurance",
-    "Maintenance",
-    "Tax",
-    "Card Terminal Revenue",
-    "Online Order Revenue",
-    "Walk-in Revenue",
-    "Loan Repayment",
-    "Miscellaneous",
+REVENUE_CATEGORIES = ["Card Terminal Revenue", "Online Order Revenue", "Walk-in Revenue"]
+
+COST_CATEGORIES = [
+    "Food & Beverage Supply", "Staff Costs", "Rent", "Utilities",
+    "Marketing", "Insurance", "Maintenance", "Tax", "Loan Repayment", "Miscellaneous",
 ]
 
 
@@ -97,89 +97,80 @@ def generate_restaurants() -> pd.DataFrame:
     """Generate the master restaurant table (one row per restaurant)."""
     rows = []
     for i in range(N_RESTAURANTS):
-        reg_date = _random_date(2000, 2023)
+        # Registration from 1998 to 2023 — wider range produces more maturity spread
+        reg_date = _random_date(1998, 2023)
         city = random.choice(CITIES)
         cuisine = random.choice(CUISINE_TYPES)
-        seats = int(rng.integers(15, 180))
-        rows.append(
-            {
-                "restaurant_id": f"R{i+1:04d}",
-                "legal_name": f"{cuisine} {city} {i+1}",
-                "cuisine_type": cuisine,
-                "city": city,
-                "legal_form": random.choice(LEGAL_FORMS),
-                "kvk_number": _kvk_number(),
-                "sbi_code": random.choice(SBI_CODES),
-                "registration_date": reg_date.isoformat(),
-                "is_active": random.random() > 0.05,
-                "seats": seats,
-                "loan_amount_requested_eur": int(
-                    rng.choice(
-                        [10_000, 25_000, 50_000, 75_000, 100_000,
-                         150_000, 200_000, 250_000]
-                    )
-                ),
-                "loan_purpose": random.choice(
-                    ["Equipment purchase", "Renovation", "Working capital",
-                     "Expansion", "Inventory"]
-                ),
-            }
-        )
+        seats = int(rng.integers(12, 160))
+        rows.append({
+            "restaurant_id": f"R{i+1:04d}",
+            "legal_name": f"{cuisine} {city} {i+1}",
+            "cuisine_type": cuisine,
+            "city": city,
+            "legal_form": random.choice(LEGAL_FORMS),
+            "kvk_number": _kvk_number(),
+            "sbi_code": random.choice(SBI_CODES),
+            "registration_date": reg_date.isoformat(),
+            "is_active": random.random() > 0.07,
+            "seats": seats,
+            "loan_amount_requested_eur": int(rng.choice(
+                [10_000, 25_000, 50_000, 75_000, 100_000, 150_000, 200_000, 250_000]
+            )),
+            "loan_purpose": random.choice([
+                "Equipment purchase", "Renovation", "Working capital",
+                "Expansion", "Inventory",
+            ]),
+        })
     return pd.DataFrame(rows)
 
 
 # ── Bank transactions (PSD2) ──────────────────────────────────────────────────
 
 def generate_transactions(restaurants: pd.DataFrame) -> pd.DataFrame:
-    """Generate ~730 daily transaction records per restaurant (24 months)."""
+    """Generate exactly 2 transaction rows per restaurant per day (1 credit + 1 debit).
+
+    Total rows: N_RESTAURANTS × HISTORY_DAYS × 2 ≈ 87,600.
+
+    Debit amounts span a wider range (up to 85% of daily revenue) so that
+    net cash-flow margin varies meaningfully across restaurants and produces
+    spread in the cash_flow_strength sub-score.
+    """
     rows = []
     today = date.today()
-    start = today - timedelta(days=730)
+    start = today - timedelta(days=HISTORY_DAYS)
 
     for _, rest in restaurants.iterrows():
         r_id = rest["restaurant_id"]
         seats = rest["seats"]
-        base_revenue = seats * rng.uniform(18, 55)   # daily revenue baseline
+        daily_revenue = seats * float(rng.uniform(7, 18))   # €/seat/day
+
+        # Cost pressure 0.28–0.92: wide range ensures cash_flow_strength spans
+        # from ~27 (high-cost operator) to 100 (low-cost operator).
+        cost_pressure = float(rng.uniform(0.28, 0.92))
 
         current = start
         while current <= today:
-            # Revenue transactions (2–4 per day)
-            for _ in range(random.randint(2, 4)):
-                rows.append(
-                    {
-                        "restaurant_id": r_id,
-                        "date": current.isoformat(),
-                        "amount_eur": round(
-                            float(rng.normal(base_revenue / 3, base_revenue / 8)), 2
-                        ),
-                        "direction": "credit",
-                        "category": random.choice(
-                            ["Card Terminal Revenue",
-                             "Online Order Revenue",
-                             "Walk-in Revenue"]
-                        ),
-                        "description": "Daily revenue",
-                    }
-                )
-            # Cost transactions (1–3 per day)
-            for _ in range(random.randint(1, 3)):
-                rows.append(
-                    {
-                        "restaurant_id": r_id,
-                        "date": current.isoformat(),
-                        "amount_eur": round(
-                            float(rng.uniform(50, base_revenue * 0.6)), 2
-                        ),
-                        "direction": "debit",
-                        "category": random.choice(
-                            [c for c in TX_CATEGORIES
-                             if c not in ("Card Terminal Revenue",
-                                          "Online Order Revenue",
-                                          "Walk-in Revenue")]
-                        ),
-                        "description": "Operating expense",
-                    }
-                )
+            credit = max(0.0, round(float(rng.normal(daily_revenue, daily_revenue * 0.12)), 2))
+            debit = max(0.0, round(float(rng.normal(
+                daily_revenue * cost_pressure,
+                daily_revenue * cost_pressure * 0.15,
+            )), 2))
+            rows.append({
+                "restaurant_id": r_id,
+                "date": current.isoformat(),
+                "amount_eur": credit,
+                "direction": "credit",
+                "category": random.choice(REVENUE_CATEGORIES),
+                "description": "Daily revenue",
+            })
+            rows.append({
+                "restaurant_id": r_id,
+                "date": current.isoformat(),
+                "amount_eur": debit,
+                "direction": "debit",
+                "category": random.choice(COST_CATEGORIES),
+                "description": "Operating expense",
+            })
             current += timedelta(days=1)
 
     return pd.DataFrame(rows)
@@ -188,32 +179,46 @@ def generate_transactions(restaurants: pd.DataFrame) -> pd.DataFrame:
 # ── POS records ───────────────────────────────────────────────────────────────
 
 def generate_pos_records(restaurants: pd.DataFrame) -> pd.DataFrame:
-    """Generate daily POS summary records for 24 months."""
+    """Generate one daily POS summary row per restaurant per day.
+
+    Total rows: N_RESTAURANTS × HISTORY_DAYS ≈ 43,800.
+
+    Cover variance is set at ±35% (up from ±20%) so that monthly revenue
+    aggregates have more spread, producing a wider range of revenue_stability scores.
+    """
     rows = []
     today = date.today()
-    start = today - timedelta(days=730)
+    start = today - timedelta(days=HISTORY_DAYS)
 
     for _, rest in restaurants.iterrows():
         r_id = rest["restaurant_id"]
         seats = rest["seats"]
-        base_covers = int(seats * rng.uniform(0.4, 1.2))
-        avg_spend = float(rng.uniform(14, 55))
+        base_covers = int(seats * float(rng.uniform(0.35, 1.25)))
+        avg_spend = float(rng.uniform(12, 55))
+
+        # Seasonal amplitude 0.0–0.85 per restaurant.
+        # 0 = year-round stable (high revenue_stability score).
+        # 0.85 = peak season is 85% above trough (low revenue_stability score).
+        # Peak month varies: summer terraces peak in July, bakeries in December, etc.
+        seasonal_amp = float(rng.uniform(0.0, 0.85))
+        peak_month = int(rng.integers(1, 13))
 
         current = start
         while current <= today:
-            covers = max(0, int(rng.normal(base_covers, base_covers * 0.2)))
-            gross = round(covers * avg_spend * rng.uniform(0.95, 1.05), 2)
-            net = round(gross * rng.uniform(0.82, 0.92), 2)
-            rows.append(
-                {
-                    "restaurant_id": r_id,
-                    "date": current.isoformat(),
-                    "covers": covers,
-                    "gross_revenue_eur": gross,
-                    "net_revenue_eur": net,
-                    "avg_spend_eur": round(avg_spend, 2),
-                }
+            seasonal_factor = 1.0 + seasonal_amp * math.sin(
+                2 * math.pi * (current.month - peak_month) / 12
             )
+            covers = max(0, int(rng.normal(base_covers * seasonal_factor, base_covers * 0.30)))
+            gross = round(covers * avg_spend * float(rng.uniform(0.94, 1.06)), 2)
+            net = round(gross * float(rng.uniform(0.80, 0.93)), 2)
+            rows.append({
+                "restaurant_id": r_id,
+                "date": current.isoformat(),
+                "covers": covers,
+                "gross_revenue_eur": gross,
+                "net_revenue_eur": net,
+                "avg_spend_eur": round(avg_spend, 2),
+            })
             current += timedelta(days=1)
 
     return pd.DataFrame(rows)
@@ -222,35 +227,46 @@ def generate_pos_records(restaurants: pd.DataFrame) -> pd.DataFrame:
 # ── Accounting / P&L ─────────────────────────────────────────────────────────
 
 def generate_accounting(restaurants: pd.DataFrame) -> pd.DataFrame:
-    """Generate 3 years of annual P&L and balance-sheet rows per restaurant."""
+    """Generate 3 years of annual P&L and balance-sheet rows per restaurant.
+
+    Distributions are widened to produce genuine low / medium / high risk spread:
+      cost_ratio  0.48–0.92  → cost_structure scores span 0–92,
+                                repayment_capacity scores span ~13–100
+      debt_ratio  0.00–0.75  → debt_burden scores span 25–100
+    """
     rows = []
     current_year = date.today().year
 
     for _, rest in restaurants.iterrows():
         r_id = rest["restaurant_id"]
         seats = rest["seats"]
-        base_revenue = seats * rng.uniform(200_000 / 80, 500_000 / 80)
+        # Annual revenue base: €2,500–€6,000 per seat per year
+        base_revenue = seats * float(rng.uniform(2_500, 6_000))
 
         for yr in range(current_year - 3, current_year):
-            revenue = round(float(base_revenue * rng.uniform(0.85, 1.15)), 2)
-            cost_ratio = float(rng.uniform(0.55, 0.80))
+            revenue = round(float(base_revenue * rng.uniform(0.82, 1.18)), 2)
+            # 40% of restaurants are high-cost operators (cost_ratio 0.76–0.95).
+            # 60% are healthy-to-moderate (cost_ratio 0.48–0.78).
+            # This bimodal split reflects the real hospitality market.
+            if rng.random() < 0.40:
+                cost_ratio = float(rng.uniform(0.76, 0.95))
+            else:
+                cost_ratio = float(rng.uniform(0.48, 0.78))
             costs = round(revenue * cost_ratio, 2)
             ebitda = round(revenue - costs, 2)
-            net_profit = round(ebitda * rng.uniform(0.5, 0.9), 2)
-            total_debt = round(float(rng.uniform(0, revenue * 0.6)), 2)
-            total_assets = round(float(rng.uniform(revenue * 0.3, revenue * 1.2)), 2)
-            rows.append(
-                {
-                    "restaurant_id": r_id,
-                    "year": yr,
-                    "total_revenue_eur": revenue,
-                    "total_costs_eur": costs,
-                    "ebitda_eur": ebitda,
-                    "net_profit_eur": net_profit,
-                    "total_debt_eur": total_debt,
-                    "total_assets_eur": total_assets,
-                }
-            )
+            net_profit = round(ebitda * float(rng.uniform(0.45, 0.90)), 2)
+            total_debt = round(float(rng.uniform(0, revenue * 0.75)), 2)
+            total_assets = round(float(rng.uniform(revenue * 0.25, revenue * 1.20)), 2)
+            rows.append({
+                "restaurant_id": r_id,
+                "year": yr,
+                "total_revenue_eur": revenue,
+                "total_costs_eur": costs,
+                "ebitda_eur": ebitda,
+                "net_profit_eur": net_profit,
+                "total_debt_eur": total_debt,
+                "total_assets_eur": total_assets,
+            })
 
     return pd.DataFrame(rows)
 
@@ -262,26 +278,22 @@ def generate_lenders() -> pd.DataFrame:
     rows = []
     for i, name in enumerate(LENDER_NAMES):
         min_score = int(rng.integers(30, 65))
-        rows.append(
-            {
-                "lender_id": f"L{i+1:02d}",
-                "name": name,
-                "min_score": min_score,
-                "max_loan_eur": int(
-                    rng.choice([50_000, 100_000, 250_000, 500_000, 1_000_000])
-                ),
-                "min_loan_eur": int(rng.choice([5_000, 10_000, 25_000])),
-                "interest_rate_pct": round(float(rng.uniform(3.5, 12.0)), 2),
-                "max_term_months": int(rng.choice([12, 24, 36, 60, 84])),
-                "supported_purposes": "|".join(
-                    random.sample(LOAN_PRODUCTS, k=random.randint(2, 4))
-                ),
-                "focus": random.choice(
-                    ["All restaurants", "Sustainable only",
-                     "SME specialist", "Micro-finance", "Growth-stage"]
-                ),
-            }
-        )
+        rows.append({
+            "lender_id": f"L{i+1:02d}",
+            "name": name,
+            "min_score": min_score,
+            "max_loan_eur": int(rng.choice([50_000, 100_000, 250_000, 500_000, 1_000_000])),
+            "min_loan_eur": int(rng.choice([5_000, 10_000, 25_000])),
+            "interest_rate_pct": round(float(rng.uniform(3.5, 12.0)), 2),
+            "max_term_months": int(rng.choice([12, 24, 36, 60, 84])),
+            "supported_purposes": "|".join(
+                random.sample(LOAN_PRODUCTS, k=random.randint(2, 4))
+            ),
+            "focus": random.choice([
+                "All restaurants", "Sustainable only",
+                "SME specialist", "Micro-finance", "Growth-stage",
+            ]),
+        })
     return pd.DataFrame(rows)
 
 
