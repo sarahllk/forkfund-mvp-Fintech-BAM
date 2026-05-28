@@ -53,21 +53,23 @@ def explain_exclusions(
         reasons = []
         if row["min_score"] > score:
             reasons.append(
-                f"Score {score:.0f} is below this lender's minimum of {row['min_score']}"
+                f"Minimum score requirement: {row['min_score']} "
+                f"(current assessment: {score:.0f})"
             )
         if loan_amount < row["min_loan_eur"]:
             reasons.append(
-                f"Requested amount €{loan_amount:,.0f} is below "
-                f"the minimum of €{row['min_loan_eur']:,.0f}"
+                f"Loan amount below this lender's minimum "
+                f"(minimum: €{row['min_loan_eur']:,.0f})"
             )
         if loan_amount > row["max_loan_eur"]:
             reasons.append(
-                f"Requested amount €{loan_amount:,.0f} exceeds "
-                f"the maximum of €{row['max_loan_eur']:,.0f}"
+                f"Loan amount above this lender's maximum "
+                f"(maximum: €{row['max_loan_eur']:,.0f})"
             )
         if loan_purpose not in str(row["supported_purposes"]):
             reasons.append(
-                f"Loan purpose '{loan_purpose}' is not in this lender's supported products"
+                f"Loan purpose not in this lender's supported products "
+                f"({loan_purpose})"
             )
         if reasons:
             results.append({"lender": row["name"], "reasons": reasons})

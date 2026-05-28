@@ -14,9 +14,9 @@ class CreditPassport:
     restaurant_id: str
     legal_name: str
     generated_at: str                         # ISO-8601 timestamp
+    score_result: ScoreResult                 # required — no safe default exists
     profile: dict = field(default_factory=dict)
     financial_indicators: dict = field(default_factory=dict)
-    score_result: ScoreResult = field(default_factory=ScoreResult)
     explanations: dict = field(default_factory=dict)
     risk_flags: list = field(default_factory=list)
     financing_readiness: str = ""
