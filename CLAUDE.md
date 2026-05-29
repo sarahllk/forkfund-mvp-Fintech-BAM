@@ -68,3 +68,35 @@ pytest tests/
 ```bash
 python -m src.utils.data_generator
 ```
+
+## Sources of truth
+
+| File | Authoritative for |
+|---|---|
+| `README.md` | Project overview, setup instructions, deployment URL |
+| `docs/scoring_model.md` | Scoring dimensions, weights, formulas, grade and risk bands |
+| `docs/data_model.md` | Dataset sizes, generation parameters, entity relationships |
+| `src/scoring/engine.py` | Canonical implementation — takes precedence over all documentation |
+
+If a document contradicts the code, the code is correct; update the document.
+
+## Workflow
+
+1. Human defines the task.
+2. Agent proposes changes and explains reasoning before modifying files.
+3. Human reviews and approves, rejects, or redirects.
+4. Human commits and pushes — the agent does not commit or push autonomously.
+
+## Commit message conventions
+
+Use the imperative mood, scoped to the area of change:
+
+```
+Fix scoring_model.md to match 7-dimension engine implementation
+Update scenario labels to reflect actual KvK registration dates
+Add screenshots to README and replace deployment URL placeholder
+```
+
+- One-line summary, 50 characters or fewer where possible
+- No AI attribution in commit messages or Co-Authored-By trailers
+- Reference the affected module, file, or workflow step where useful

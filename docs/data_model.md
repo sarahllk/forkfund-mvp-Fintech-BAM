@@ -16,9 +16,9 @@ Lenders (independent reference table)
 
 | Parameter | Value |
 |-----------|-------|
-| Number of restaurants | 175 |
-| Transaction history | 24 months |
-| POS history | 24 months |
+| Number of restaurants | 120 |
+| Transaction history | 12 months |
+| POS history | 12 months |
 | Accounting years | 3 years |
 | Number of lenders | 10 |
 | Random seed | 42 |

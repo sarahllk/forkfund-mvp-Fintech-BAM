@@ -47,3 +47,41 @@ ForkFund is a **prototype MVP** with entirely synthetic data. Agents must not:
 - All scores and sub-scores must be in range [0, 100]
 - Connector functions must return a `pd.DataFrame`
 - Do not add features beyond the current sprint's requirements
+
+---
+
+## Sources of truth
+
+Before making any claim about scoring logic, dataset parameters, or project scope, verify against:
+
+| File | Authoritative for |
+|---|---|
+| `README.md` | Project overview and user-facing description |
+| `docs/scoring_model.md` | Scoring dimensions, weights, and grade/risk bands |
+| `docs/data_model.md` | Dataset sizes and generation parameters |
+| `src/scoring/engine.py` | Canonical implementation — code takes precedence over documentation |
+
+---
+
+## Workflow
+
+1. Human defines the task.
+2. Agent proposes and explains changes before modifying files.
+3. Human reviews and approves, rejects, or redirects.
+4. Human commits and pushes — agents do not commit or push autonomously.
+
+---
+
+## Commit message conventions
+
+When drafting commit messages for human review, use the imperative mood:
+
+```
+Fix scoring_model.md to match 7-dimension engine implementation
+Update scenario labels to reflect actual KvK registration dates
+Add screenshots and replace deployment URL placeholder in README
+```
+
+- One-line summary, 50 characters or fewer where possible
+- No AI attribution in commit messages (see Scope above)
+- Reference the affected module, file, or workflow step

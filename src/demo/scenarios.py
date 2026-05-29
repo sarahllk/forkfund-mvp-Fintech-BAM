@@ -16,12 +16,12 @@ SCENARIOS: dict[str, dict] = {
     "R0084": {
         "restaurant_id": "R0084",
         "label": "Established Neighbourhood Restaurant",
-        "tagline": "19-year business with stable year-round revenue and healthy margins.",
+        "tagline": "21-year business with stable year-round revenue and healthy margins.",
         "scenario_type": "financing_ready",
         "grade_hint": "A",
         "risk_hint": "Low",
         "context": (
-            "A mature, well-run restaurant with nearly two decades of trading history. "
+            "A mature, well-run restaurant with over two decades of trading history. "
             "Revenue is consistent month-on-month, EBITDA margin is healthy at 35%, "
             "and existing debt is modest relative to revenue. "
             "The working capital request is small in relation to annual turnover."
@@ -47,12 +47,12 @@ SCENARIOS: dict[str, dict] = {
     "R0029": {
         "restaurant_id": "R0029",
         "label": "Seasonal Restaurant with Revenue Variability",
-        "tagline": "9-year business with pronounced seasonal swings and moderate margins.",
+        "tagline": "26-year business with pronounced seasonal swings and moderate margins.",
         "scenario_type": "seasonal_risk",
         "grade_hint": "C",
         "risk_hint": "Medium",
         "context": (
-            "A 9-year restaurant with good peak-season revenue but a revenue "
+            "A 26-year restaurant with good peak-season revenue but a revenue "
             "stability score of 30 out of 100 — among the lowest in the dataset. "
             "EBITDA margin is 26% at the most recent year-end, but the seasonal "
             "trough creates recurring working capital pressure. "
@@ -109,54 +109,58 @@ SCENARIOS: dict[str, dict] = {
 
     "R0028": {
         "restaurant_id": "R0028",
-        "label": "Recently Opened Restaurant",
-        "tagline": "2.8-year business with solid margins but a trading record below standard thresholds.",
-        "scenario_type": "limited_history",
+        "label": "Established Restaurant with Revenue Variability",
+        "tagline": "9-year business with a strong EBITDA margin but pronounced month-to-month revenue swings.",
+        "scenario_type": "variable_revenue",
         "grade_hint": "B",
         "risk_hint": "Medium",
         "context": (
-            "A restaurant that opened 2.8 years ago with €400k annual revenue and "
-            "a 34% EBITDA margin — indicating sound operations. The lower composite "
-            "score is driven almost entirely by business maturity (below standard "
-            "3-year thresholds). The loan request is modest at €10k."
+            "A restaurant with nine years of trading history and €400k annual revenue. "
+            "EBITDA margin is strong at 34%, indicating sound profitability, but monthly "
+            "revenue shows significant variability (stability score: 38 out of 100). "
+            "Debt stands at 0.38 times revenue — moderate and not elevated. "
+            "The loan request is modest at €10k."
         ),
         "lender_notice": (
-            "The financials are healthy for a business this age. The main risk is "
-            "the absence of a long trading record to confirm that current performance "
-            "is sustainable. Many standard lender policies require a minimum of "
-            "3 years of filed accounts."
+            "Profitability is not in question — EBITDA margin is healthy and debt burden "
+            "is manageable. The primary analytical focus is revenue variability: month-on-month "
+            "swings need to be examined to determine whether they reflect seasonality, "
+            "structural volatility, or a temporary trading pattern. The cost ratio at 66% "
+            "of revenue also warrants review."
         ),
         "financing_challenge": (
-            "Small term loan (€10k). Serviceability is strong, but the sub-3-year "
-            "operating history may exclude this business from standard underwriting "
-            "criteria. Specialist SME or micro-finance lenders are the appropriate channel."
+            "Small term loan (€10k) against €400k annual revenue. Debt serviceability "
+            "from EBITDA is strong. The key assessment question is whether revenue "
+            "variability creates cash-flow gaps that could affect repayment timing."
         ),
         "lender_focus": [
-            "Management background and relevant sector experience",
-            "Revenue trajectory since opening",
-            "Whether trading history meets minimum lender policy requirements",
+            "Month-by-month revenue distribution over the review period",
+            "Root cause of revenue variability — seasonal pattern or structural volatility",
+            "Cost ratio trend and scope for operating efficiency improvement",
         ],
     },
 
     "R0022": {
         "restaurant_id": "R0022",
-        "label": "Mature Restaurant with Stretched Margins",
-        "tagline": "25-year business with high revenue but compressed margins and significant existing debt.",
+        "label": "Leveraged Restaurant with Compressed Margins",
+        "tagline": "4-year business with high revenue but elevated debt and an unsustainable cost structure.",
         "scenario_type": "high_leverage",
         "grade_hint": "C",
         "risk_hint": "Medium",
         "context": (
-            "A well-established restaurant group with €651k annual revenue. "
-            "The business has a long trading history and relatively stable revenue. "
-            "However, existing debt stands at 0.71 times revenue, the EBITDA margin "
-            "has compressed to 18%, and the cost structure score is very low — "
-            "indicating thin operating margins relative to revenue."
+            "A relatively young restaurant (3.7 years) with €651k annual revenue "
+            "and a moderately stable revenue trend. Existing debt stands at 0.71 times "
+            "revenue, the EBITDA margin has compressed to 18%, and the cost structure "
+            "score is very low — operating costs at 82% of revenue are compressing margins "
+            "to a precarious level. The limited trading history adds further underwriting risk."
         ),
         "lender_notice": (
-            "The leverage ratio is the central concern. At 0.71 times debt-to-revenue "
-            "with an 18% EBITDA margin, debt service coverage is already under "
-            "pressure. Additional revolving credit will further increase the "
-            "fixed obligations that must be covered from operating cash flow."
+            "The leverage ratio and cost structure are the central concerns. At 0.71 times "
+            "debt-to-revenue with an 18% EBITDA margin, debt service coverage is already "
+            "under pressure. The limited trading record of under four years also reduces "
+            "confidence in the sustainability of current performance. Additional revolving "
+            "credit will further increase fixed obligations that must be covered from "
+            "operating cash flow."
         ),
         "financing_challenge": (
             "Revolving credit facility (€50k) — likely intended to manage "
@@ -174,7 +178,7 @@ SCENARIOS: dict[str, dict] = {
     "R0086": {
         "restaurant_id": "R0086",
         "label": "Operationally Distressed Restaurant",
-        "tagline": "21-year business with very thin margins and multiple risk flags.",
+        "tagline": "23-year business with very thin margins and multiple risk flags.",
         "scenario_type": "distressed",
         "grade_hint": "C",
         "risk_hint": "Medium",
@@ -209,21 +213,23 @@ SCENARIOS: dict[str, dict] = {
 SCENARIO_ORDER = ["R0084", "R0002", "R0022", "R0028", "R0029", "R0086"]
 
 SCENARIO_TYPE_COLOR: dict[str, tuple[str, str]] = {
-    "financing_ready": ("#15803D", "#F0FDF4"),
-    "growth_stage":    ("#2563EB", "#EFF6FF"),
-    "high_leverage":   ("#B45309", "#FFFBEB"),
-    "limited_history": ("#6D28D9", "#F5F3FF"),
-    "seasonal_risk":   ("#0E7490", "#ECFEFF"),
-    "distressed":      ("#B91C1C", "#FEF2F2"),
+    "financing_ready":  ("#15803D", "#F0FDF4"),
+    "growth_stage":     ("#2563EB", "#EFF6FF"),
+    "high_leverage":    ("#B45309", "#FFFBEB"),
+    "limited_history":  ("#6D28D9", "#F5F3FF"),
+    "seasonal_risk":    ("#0E7490", "#ECFEFF"),
+    "variable_revenue": ("#0369A1", "#E0F2FE"),
+    "distressed":       ("#B91C1C", "#FEF2F2"),
 }
 
 SCENARIO_TYPE_LABEL: dict[str, str] = {
-    "financing_ready": "Financing Ready",
-    "growth_stage":    "Growth Stage",
-    "high_leverage":   "High Leverage",
-    "limited_history": "Limited History",
-    "seasonal_risk":   "Seasonal Risk",
-    "distressed":      "Operational Distress",
+    "financing_ready":  "Financing Ready",
+    "growth_stage":     "Growth Stage",
+    "high_leverage":    "High Leverage",
+    "limited_history":  "Limited History",
+    "seasonal_risk":    "Seasonal Risk",
+    "variable_revenue": "Variable Revenue",
+    "distressed":       "Operational Distress",
 }
 
 
